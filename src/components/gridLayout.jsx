@@ -1,12 +1,15 @@
-function gridLayout() {
-  const gridArray = Array(100);
+import '../app.css'
+
+function GridLayout() {
+  const gridArray = Array(100).fill(null);
+
   return (
     <div id="grid-board">
-      {gridArray.map((_, index) => {
-        <div key={index} className="square"></div>;
-      })}
+      {gridArray.map((_, index) => (
+        <div key={index} className="square"></div>
+      ))}
     </div>
   );
 }
 
-export default gridLayout;
+export default GridLayout;
