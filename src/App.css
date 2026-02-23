@@ -5,6 +5,8 @@
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 main {
@@ -13,18 +15,30 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(98, 125, 129);
+  height: 90vh;
+  width: 60vw;
+  border-radius: 30px;
 }
 
 #grid-board {
+  padding: 5px;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 2px;
   background-color: rgb(173, 172, 172);
+  border: 1px solid green;
 }
 
 .square {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: hwb(0 22% 78% / 0.322);
-  border: 1px solid ;
+  border: 1px solid;
+}
+.square:hover {
+  background-color: hwb(153 14% 7% / 0.322);
+  transition: all 0.5s;
+  transform: scale(0.9);
+  cursor: pointer;
 }
