@@ -4,8 +4,10 @@ function GridLayout({ incement }) {
   const gridArray = Array(100).fill(null);
 
   function press(e) {
-    incement();
-    e.target.className += " square-revealed";
+    if (!e.target.className.includes("square-revealed")) {
+      incement();
+      e.target.className = " square-revealed";
+    }
   }
 
   return (
