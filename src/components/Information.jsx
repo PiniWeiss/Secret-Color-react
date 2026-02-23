@@ -1,12 +1,10 @@
-import React from 'react'
-import { useCounter } from '../hooks/useCounter'
 
-function Information() {
-    const { count, inc, reset } = useCounter(0)
+function Information({count}) {
+    
   return (
     <div>
       <h2>Clicks: <span> {count}</span></h2>
-        
+        <p className=''></p>
     </div>
   )
 }

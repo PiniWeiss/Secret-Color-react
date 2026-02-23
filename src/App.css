@@ -34,7 +34,8 @@ h1{
 .color-to-find {
   width: 40px;
   height: 40px;
-  background-color: rgb(216, 82, 127);
+  background-color: hsl(123, 100%, 50%);
+  border: 1px solid;
 }
 
 #grid-board {
@@ -54,11 +55,19 @@ h1{
 }
 .square:hover {
   background-color: hwb(153 14% 7% / 0.322);
-  transition: all 0.5s;
+  transition: all 0.3s;
   transform: scale(0.9);
   cursor: pointer;
 }
 .square:active{
   transform: scale(1.1);
   transition: all 0.2s;
+}
+
+.square-revealed{
+   display: inline-block;
+   background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Red_X.svg/960px-Red_X.svg.png');
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   transform: scale(1.1);
 }

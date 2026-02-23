@@ -1,12 +1,17 @@
-import '../app.css'
+import "../app.css";
 
-function GridLayout() {
+function GridLayout({ incement }) {
   const gridArray = Array(100).fill(null);
+
+  function press(e) {
+    incement();
+    e.target.className += " square-revealed";
+  }
 
   return (
     <div id="grid-board">
       {gridArray.map((_, index) => (
-        <div key={index} className="square"></div>
+        <div onClick={press} key={index} className="square"></div>
       ))}
     </div>
   );
