@@ -1,6 +1,7 @@
 import "./App.css";
 import GridLayout from "./components/gridLayout";
 import Header from "./components/Header";
+import Information from "./components/Information";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <main>
         <Header/>
         <GridLayout />
+        <Information/>
       </main>
     </>
   );

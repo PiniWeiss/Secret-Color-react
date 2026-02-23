@@ -58,3 +58,7 @@ h1{
   transform: scale(0.9);
   cursor: pointer;
 }
+.square:active{
+  transform: scale(1.1);
+  transition: all 0.2s;
+}
