@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: Verdana, sans-serif;
+  max-height: 100vh;
 }
 
 main {
@@ -17,8 +18,9 @@ main {
   justify-content: center;
   align-items: center;
   background-color: rgb(98, 125, 129);
-  height: 90vh;
+  height: fit-content;
   width: 60vw;
+  min-width: fit-content;
   border-radius: 30px;
 }
 
