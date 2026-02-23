@@ -1,22 +1,18 @@
-import "./App.css";
-import GridLayout from "./components/gridLayout";
-import Header from "./components/Header";
-import Information from "./components/Information";
-import InformationContextProvider from "./contextProvider/InformationProvider";
-import { useCounter } from "./hooks/useCounter";
+import './App.css';
+import { GameProvider, useGameContext } from './contextProvider/GameContext';
+import Grid from './components/gridLayout';
+import Header from './components/Header';
+
+
 
 function App() {
-  const { count, inc, reset } = useCounter(0);
   return (
-    <>
-      <main>
-        <Header />
-        <InformationContextProvider>
-          <GridLayout incement={inc} />
-          <Information count={count} />
-        </InformationContextProvider>
-      </main>
-    </>
+    <GameProvider>
+      <div className="game-container">
+        <Header/>
+        <Grid />
+      </div>
+    </GameProvider>
   );
 }
 

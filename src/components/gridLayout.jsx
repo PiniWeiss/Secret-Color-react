@@ -1,43 +1,29 @@
-import { useContext } from "react";
-import "../app.css";
-import { InformationContext } from "../contextProvider/InformationProvider";
+import { useGameContext } from '../contextProvider/GameContext';
+import { useGameLogic } from '../hooks/useGameLogic';
 
-const numberRandom = Math.floor(Math.random() * 100);
-function GridLayout({ incement }) {
-  const gridArray = Array(100).fill(null);
-  const { keepSearching, success } = useContext(InformationContext);
-
-  function press(e) {
-    if (+e.target.id === numberRandom) {
-      e.target.className = "secret-color";
-    }
-    if (!e.target.className.includes("square-revealed")) {
-      if (e.target.className.includes("secret-color")) {
-        e.target.className = "secret-color-expolre";
-
-        success();
-      } else {
-        incement();
-        e.target.className = "square-revealed";
-        keepSearching();
-      }
-    }
-  }
+const Grid = () => {
+  const { targetIndex, secretColor, clickedIndices } = useGameContext();
+  const { handleCellClick } = useGameLogic();
 
   return (
-    <div id="grid-board">
-      {gridArray.map((square, index) => (
-        <div
-          onClick={press}
-          key={index}
-          id={index}
-          className={
-            square === "secret-color" ? "secret-color square" : "square"
-          }
-        ></div>
-      ))}
+    <div className="grid">
+      {Array.from({ length: 100 }).map((_, i) => {
+        const isClicked = clickedIndices.includes(i);
+        const isTarget = i === targetIndex;
+
+        return (
+          <div
+            key={i}
+            className={`cell ${isClicked ? 'clicked' : ''}`}
+            onClick={() => handleCellClick(i)}
+            style={isClicked && isTarget ? { backgroundColor: secretColor } : {}}
+          >
+            {isClicked && (isTarget ? '🎨' : 'X')}
+          </div>
+        );
+      })}
     </div>
   );
-}
+};
 
-export default GridLayout;
+export default Grid;

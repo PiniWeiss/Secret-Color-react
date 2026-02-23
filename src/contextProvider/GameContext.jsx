@@ -1,24 +1,23 @@
-
-import { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect, useContext, useRef } from 'react';
 
 const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
-  const [targetIndex, setTargetIndex] = useState(null); 
-  const [secretColor, setSecretColor] = useState(''); 
-  const [clickedIndices, setClickedIndices] = useState([]); 
+  const [targetIndex, setTargetIndex] = useState(null);
+  const [clickedIndices, setClickedIndices] = useState([]);
   const [isGameOver, setIsGameOver] = useState(false);
+  
+  // שימוש ב-useRef לשמירת הצבע הסודי - הוא לא משתנה בין רינדורים
+  const secretColorRef = useRef(`#${Math.floor(Math.random()*16777215).toString(16)}`);
 
+  // הגרלת מיקום בטעינה הראשונה
   useEffect(() => {
-    const randomIdx = Math.floor(Math.random() * 100);
-    const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
-    setTargetIndex(randomIdx);
-    setSecretColor(randomColor);
+    setTargetIndex(Math.floor(Math.random() * 100));
   }, []);
 
   const value = {
     targetIndex,
-    secretColor,
+    secretColor: secretColorRef.current,
     clickedIndices,
     setClickedIndices,
     isGameOver,

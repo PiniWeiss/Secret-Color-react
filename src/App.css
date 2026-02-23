@@ -1,123 +1,46 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  font-family: Verdana, sans-serif;
-}
-
-main {
-  margin-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(98, 125, 129);
-  height: 90vh;
-  width: 60vw;
-  border-radius: 30px;
-}
-
-header {
-  color: white;
-}
-h1 {
-  display: flex;
-}
-.title-color {
-  color: tomato;
-}
-.color-to-find {
-  width: 40px;
-  height: 40px;
-  background-color: hsl(123, 100%, 50%);
-  border: 1px solid;
-}
-
-#grid-board {
-  padding: 5px;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 2px;
-  background-color: rgb(173, 172, 172);
-  border: 1px solid green;
-}
-
-.square,
-.square-revealed {
-  width: 40px;
-  height: 40px;
-  background-color: hwb(0 22% 78% / 0.322);
-  border: 1px solid;
-}
-.square:hover {
-  background-color: hwb(153 14% 7% / 0.322);
-  transition: all 0.3s;
-  transform: scale(0.9);
-  cursor: pointer;
-}
-.square:active {
-  transform: scale(1.1);
-  transition: all 0.2s;
-}
-
-.square-revealed {
-  display: inline-block;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Red_X.svg/960px-Red_X.svg.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  transform: scale(1.1);
-}
-.square-revealed:hover {
-  cursor: not-allowed;
-}
-hr {
-  border: 0;
-  height: 3px;
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    rgba(179, 173, 93, 0.5),
-    transparent
-  );
-}
-.secret-color-expolre {
-  display: inline-block;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNYYzd5eHLK6yaw3qBNm48y3YABH63cdx48g&s");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  transform: scale(1.1);
-}
-
-.information {
+/* App.css */
+.game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.game-status {
-  display: flex;
-  align-items: center;
-}
-
-.success-message {
-  position: absolute;
-  font-size: 3rem;
-  color: rgb(0, 255, 21);
-  background-color: rgb(132, 132, 230);
-  border-radius: 30px;
+  font-family: Arial, sans-serif;
   padding: 20px;
-  top: 10vh;
-  transition: 0.3s ease;
-  font-weight: 700;
 }
 
-.game-status {
-  color: rgb(255, 255, 0);
-  font-size: 1.6rem;
-  font-weight: 700;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.cell:hover {
+  background-color: #e0e0e0;
+}
+
+.cell.clicked {
+  cursor: default;
+}
+
+.cell.target {
+  /* הצבע יוזרק דרך ה-Style רק עבור התא הספציפי הזה בסוף */
+}
+
+.game-over-msg {
+  color: #28a745;
+  font-size: 1.5rem;
 }
