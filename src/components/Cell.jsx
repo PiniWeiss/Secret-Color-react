@@ -13,7 +13,6 @@ const Cell = ({ index }) => {
       onClick={() => handleCellClick(index)}
       style={isClicked && isTarget ? { backgroundColor: secretColor } : {}}
     >
-      {index}
       {isClicked && (isTarget ? "🎨" : "X")}
     </div>
   );

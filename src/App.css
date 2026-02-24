@@ -66,10 +66,6 @@ header {
   background-color: #e0e0e0;
 }
 
-.cell.target {
-  /* הצבע יוזרק דרך ה-Style רק עבור התא הספציפי הזה בסוף */
-}
-
 .game-over-msg {
   color: #28a745;
   font-size: 1.5rem;
@@ -82,7 +78,7 @@ header {
   background-color: #28a745;
   color: white;
   border-radius: 20px;
-  padding:0 60px;
+  padding: 0 60px;
 }
 .new-game-btn {
   padding: 10px;
