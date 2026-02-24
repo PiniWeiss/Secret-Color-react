@@ -70,3 +70,24 @@ main {
   color: #28a745;
   font-size: 1.5rem;
 }
+
+.success-area{
+  
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #28a745;
+color: white;
+border-radius: 20px;
+
+
+}
+.new-game-btn{
+  padding: 10px;
+  border: white 2px solid;
+  color: #00ff3c;
+  background-color: #4792a0;
+  box-shadow: rgb(98, 125, 129);
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
