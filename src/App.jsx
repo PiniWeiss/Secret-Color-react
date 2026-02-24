@@ -1,5 +1,5 @@
 import './App.css';
-import { GameProvider, useGameContext } from './contextProvider/GameContext';
+import { GameProvider} from './contextProvider/GameContext';
 import Grid from './components/gridLayout';
 import Header from './components/Header';
 
