@@ -1,4 +1,26 @@
-/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-family: Verdana, sans-serif;
+  max-height: 100vh;
+}
+main {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(98, 125, 129);
+  width: 60vw;
+  min-width: fit-content;
+  border-radius: 30px;
+}
+.header {
+  color: white;
+}
 .game-container, header {
   display: flex;
   flex-direction: column;
@@ -13,18 +35,21 @@
   grid-template-rows: repeat(10, 50px);
   gap: 5px;
   margin-top: 20px;
+  background-color: rgb(173, 172, 172);
+  border: 1px solid green;
 }
 
 .cell {
   width: 50px;
   height: 50px;
-  background-color: #f0f0f0;
+  background-color: hwb(0 22% 78% / 0.322);
   border: 1px solid #ccc;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-weight: bold;
+   border: 1px solid;
   transition: background-color 0.2s;
 }
 
@@ -33,7 +58,8 @@
 }
 
 .cell.clicked {
-  cursor: default;
+  cursor: not-allowed;
+  background-color: #e0e0e0;
 }
 
 .cell.target {

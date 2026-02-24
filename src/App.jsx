@@ -8,10 +8,11 @@ import Header from './components/Header';
 function App() {
   return (
     <GameProvider>
+      <main>
       <div className="game-container">
         <Header/>
         <Grid />
-      </div>
+      </div></main>
     </GameProvider>
   );
 }

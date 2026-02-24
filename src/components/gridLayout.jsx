@@ -18,6 +18,7 @@ const Grid = () => {
             onClick={() => handleCellClick(i)}
             style={isClicked && isTarget ? { backgroundColor: secretColor } : {}}
           >
+            {i}
             {isClicked && (isTarget ? '🎨' : 'X')}
           </div>
         );
