@@ -1,9 +1,11 @@
 import { useGameLogic } from "../hooks/useGameLogic";
 import { useGameContext } from "../contextProvider/GameContext";
 
-const Cell = ({ isClicked, isTarget, index }) => {
-  const { secretColor } = useGameContext();
+const Cell = ({ index }) => {
+  const { targetIndex, clickedIndices, secretColor } = useGameContext();
   const { handleCellClick } = useGameLogic();
+  const isClicked = clickedIndices.includes(index);
+  const isTarget = index === targetIndex;
   return (
     <div
       key={index}
