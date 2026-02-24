@@ -2,7 +2,7 @@ import { useGameContext } from '../contextProvider/GameContext';
 
 export const useGameLogic = () => {
   const { targetIndex, clickedIndices, setClickedIndices, setIsGameOver, isGameOver } = useGameContext();
-console.log(targetIndex)
+
   const handleCellClick = (index) => {
     if (isGameOver || clickedIndices.includes(index)) return;
 
