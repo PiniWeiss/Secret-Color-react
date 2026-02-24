@@ -8,7 +8,7 @@ import WonMeassage from "./WonMeassage";
     <div className="header">
       <h1>Find the Secret Color</h1>
       <p>Total Clicks: {clicks}</p>
-      {isGameOver ? <WonMeassage/>:<h3>Keep Searching..</h3>}
+      {isGameOver ? <WonMeassage/>:clicks>0 ?<h3>Keep Searching..</h3>: <h2>Start Clicking</h2>}
     </div>
   );
 };
